@@ -1,0 +1,8 @@
+ERROR = 'error'
+LINK = 'link'
+LINK_YOUTUBE = 'link-youtube'
+PHOTO = 'photo'
+DOC = 'doc'
+VIDEO_ALBUM = 'video_album'
+VIDEO_LARGE = 'video_separate'
+ANIMATION = 'animation'
