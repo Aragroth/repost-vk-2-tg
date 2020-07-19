@@ -28,7 +28,6 @@ sudo apt install ffmpeg
 ```
 > Мой pull request на pyTelegramBotAPI уже мерджанули, но релизная версия не вышла. Поэтому telebot надо устанавливать
 > напрямую из их github репозитория
-> package directly from github repository
 >```
 >pip install git+https://github.com/eternnoir/pyTelegramBotAPI#egg=telebot
 >```
