@@ -166,10 +166,11 @@ class TelegramSender:
 
         for file in self.attachments.album_sendings:
             album_attachments.append(
-                InputMediaPhoto(file[PHOTO]) if PHOTO in file.keys()[0] else InputMediaVideo(
-                    file[VIDEO_ALBUM].media, duration=file[VIDEO_ALBUM].duration,
-                    width=file[VIDEO_ALBUM].width,
-                    height=file[VIDEO_ALBUM].height))
+                InputMediaPhoto(file[PHOTO]) if PHOTO in list(file.keys())[0] else InputMediaVideo(
+                        file[VIDEO_ALBUM].media, duration=file[VIDEO_ALBUM].duration,
+                        width=file[VIDEO_ALBUM].width,
+                        height=file[VIDEO_ALBUM].height)
+                    )
 
         self.tg_client.send_media_group(self.chat_link, album_attachments)
         time.sleep(3)

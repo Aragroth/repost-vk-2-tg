@@ -76,8 +76,12 @@ class Post:
         Преобразует каждый вид вложения для отправки. Во время преобразования могут возникнут "ошибки".
         Любые виды таких ошибок не прерывают работу скрипта, а позднее логируются.
         """
+        try:
+            attachments = self.raw_post['attachments']
+        except KeyError:
+            attachments = []
 
-        for element in self.raw_post['attachments']:
+        for element in attachments:
             if element['type'] == 'video':
                 self.attachments_storage.append(
                     self.parse_video(element['video'])
